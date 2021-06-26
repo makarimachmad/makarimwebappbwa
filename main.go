@@ -61,7 +61,7 @@ func main() {
 	api := router.Group("/api/v1")
 
 
-	router.GET("/", func(c *gin.Context) {
+	router.GET("", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"ok":"ok"})
 	})
 
