@@ -60,6 +60,11 @@ func main() {
 	router.Static("/images", "./images")
 	api := router.Group("/api/v1")
 
+
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"ok":"ok"})
+	})
+
 	api.POST("/users", userHandler.RegisterUser) //pendaftaran pengguna
 	api.POST("/sessions", userHandler.Login) //login
 	api.POST("/emailcek", userHandler.CheckEmail) //cek apakah email sudah ada atau belum
